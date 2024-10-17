@@ -1,0 +1,887 @@
+/* General Reset and Body Styles */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+select,
+textarea,
+button {
+    outline: 0;
+}
+
+/* Main Container */
+.main-container {
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #a67c7c, #5a3d3d);
+    height: 90px;
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 850px;
+}
+
+.logo img {
+    width: 60px;
+}
+
+.logo-text {
+    color: white;
+    font-size: 1.2em;
+    margin-top: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 2px 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 0 20px;
+}
+
+.nav-links li {
+    margin: 0 15px; /* Reduce space between items */
+}
+
+.nav-links li a {
+    color: white; /* Ensure text is white for visibility */
+    text-decoration: none;
+    font-size: 16px; /* Adjust font size to be smaller */
+    font-weight: bold; /* Make text bold */
+    padding: 8px 12px; /* Add padding for clickable area */
+    text-transform: uppercase; /* Make navbar text uppercase for consistency */
+}
+
+.nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Add hover effect for better interactivity */
+    border-radius: 5px; /* Slight rounding of hover background */
+}
+
+/* Hero Section */
+.barb {
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.barb-text {
+    font-size:20px;
+    color: white;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-left: 50px;
+    max-width: 400px;
+}
+.barb-text h1{
+    font-size: 80px;
+}
+
+.video-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.reserve-btn {
+    border-radius: 4px;
+    background-color: #a67c7c;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s;
+}
+.reserve-btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.8s;
+  }
+.reserve-btn span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.reserve-btn:hover span{
+    padding-right: 25px;
+}
+.reserve-btn:hover span::after{
+    opacity: 1;
+    right: 0;
+  }
+
+
+.barb-text a{
+    text-decoration: none;
+}
+
+
+.barb-text a:visited{
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, #a67c7c, #5a3d3d);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    position:fixed;
+    bottom: 0; 
+    width: 100%; 
+}
+
+footer p, footer a {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+footer .contact, footer .hours, footer .socials {
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: white; 
+    text-decoration: none;
+    font-weight: bold; 
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Social Icons */
+.socials img {
+    width: 25px;
+    margin: 0 10px;
+}
+
+.copyright {
+    font-size: 0.8em;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Barber Image Grids */
+.flex-row-f, .flex-row-dc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-row-f {
+    position: relative;
+    width: 1058px;
+    height: 174px;
+    margin: 59px 0 0 191px;
+    z-index: 6;
+}
+
+.flex-row-dc {
+    position: relative;
+    width: 671px;
+    height: 174px;
+    margin: 102px 0 0 396px;
+    z-index: 8;
+}
+
+/* Barber Images */
+.img-2, .pic, .img-3, .empty, .empty-4 {
+    flex-shrink: 0;
+    position: relative;
+    width: 274px;
+    height: 174px;
+    background: url(logoormisc/barbericon.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.img-2 { z-index: 4; }
+.pic { z-index: 5; }
+.img-3 { z-index: 6; }
+.empty { z-index: 7; }
+.empty-4 { z-index: 8; }
+
+
+@media (max-width: 768px) {
+    .menu {
+        margin-left: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+/*barbers icons*/
+
+.table-barbers, th, td {
+  margin-top: 60px;
+  padding: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: rgba(0, 0, 0, 0.336);
+}
+th{
+    color: white;
+    font-size: 30px;
+}
+td{
+    color: white;
+    font-size: 20px;
+}
+.barb-icons{
+    width: 100px;       
+    height: auto;       
+    border-radius: 10px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 1); 
+    margin: 10px;
+}
+
+/*Maps*/
+
+.icon-loc{
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#Maps-loc{
+    text-align: center;
+    color: white; 
+    font-size: 20px; 
+    text-shadow: 
+        -1px -1px 0 #000, 
+        1px -1px 0 #000,   
+        -1px 1px 0 #000,    
+        1px 1px 0 #000;     
+}
+
+/* Prices */
+.center-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    margin: 100px 0; 
+    padding: 100px 50px;
+}
+
+.main-container, .main-container1, .main-container2 {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%; 
+    max-width: 1500px; 
+    height: auto;
+    margin: 20px 0;
+    background-color: #5a3d3d;
+    display: flex; 
+    justify-content: space-between; /* Space between title and price */
+    align-items: center; /* Center vertically */
+    padding: 20px; /* Adjust padding for better spacing */
+    color: black; /* Change text color to black */
+    border-radius: 10px; /* Optional, adds rounded corners */
+}
+
+.haircut-title {
+    color: white; /* Change text color */
+    font-size: 20px; /* Adjust font size */
+    margin: 0;
+    white-space: nowrap; /* Prevent title text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Show ellipsis if text overflows */
+}
+
+.price {
+    display: flex;
+    align-items: center; /* Center price vertically */
+    font-size: 20px; /* Increased font size */
+    font-weight: bold; /* Bold font for the price */
+    background-color: white;
+    padding: 5px 15px; /* Adjust padding for inner spacing */
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Softer shadow */
+    white-space: nowrap; /* Prevent price text from wrapping */
+    margin-left: 10px; /* Space between text and price */
+}
+
+.price a {
+    text-decoration: none; /* Remove underline in link */
+    color: black;
+}
+
+.price a:visited, .price a:active {
+    color: black; /* Ensure link remains black on all states */
+}
+
+h1 {
+    font-size: 24px; /* Adjust header size */
+    margin: 0; /* Remove default margin */
+    font-weight: normal; /* Regular font weight */
+}
+
+h2 {
+    margin: 0; /* Remove default margin */
+}
+
+/* frequently ask ques */
+
+.faq-container {
+    width: 1000px; /* Adjust the width to your preference */
+    background-color: #7b4b4b; /* Background color for the FAQ section */
+    border-radius: 30px; /* Rounded corners */
+    padding: 20px;
+    margin: 50px auto; /* Centers the container horizontally */
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.faq-item {
+    margin-bottom: 20px; /* Space between each FAQ item */
+}
+
+.faq-item p {
+    margin: 5px 0;
+}
+
+.faq-item strong {
+    font-size: 18px; /* Font size for the question */
+}
+
+.faq-item p {
+    font-size: 16px; /* Font size for the answer */
+}
+
+.faq-item::before {
+    content: "●"; /* Bullet points */
+    color: black; /* Color of bullet points */
+    font-size: 24px;
+    display: inline-block;
+    width: 30px; /* Space before bullet point and text */
+}
+
+
+/* form page */
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.booking-form-container {
+    background-color: #70554D;
+    padding: 50px;
+    border-radius: 15px;
+    width: 600px;
+    z-index: 100; /* Higher value to ensure form stays on top */
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.logo-form {
+    display: block;
+    margin: 0 auto 20px;
+    width: 80px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: white;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    font-size: 14px;
+}
+
+input[type="date"] {
+    color: #70554D;
+}
+
+button.submit-button {
+    background-color: #788065;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.submit-button:hover {
+    background-color: #5B6E44;
+}
+
+/* mens haircut */
+.haircut-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 36px;
+    color: #fff; /* White text color */
+    margin-bottom: 20px;
+}
+
+/* Haircut grid layout */
+.haircut-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Each haircut item */
+.haircut-item {
+    width: 16%; /* Adjust this value for more or fewer items per row */
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 200px;
+}
+
+.haircut-item img {
+    width: 150px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* This ensures the image maintains aspect ratio and is cropped to fit the container */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow for style */
+    transition: transform 0.3s ease; /* Optional: Hover effect */
+}
+
+.haircut-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: white; /* Text color for titles */
+    font-weight: 400;
+}
+
+.haircut-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+.rectangle-bg{
+    background-color: #7b4b4b;
+}
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .haircut-item {
+        width: 32%; /* For medium screens, display 3 items per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .haircut-item {
+        width: 48%; /* For small screens, display 2 items per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .haircut-item {
+        width: 100%; /* For very small screens, display 1 item per row */
+    }
+}
+
+
+
+
+/* General Tablet Viewport */
+@media (max-width: 1024px) {
+    /* Adjusting the header */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: linear-gradient(to right, #a67c7c, #5a3d3d);
+        height: 90px;
+        position: relative;
+    }
+
+    .logo {
+        margin-left: 20px;
+    }
+
+    .logo img {
+        width: 40px;
+    }
+
+    /* Navbar */
+    .nav-links {
+        display: flex; /* Ensure navbar is visible */
+        flex-direction: row; /* Horizontal alignment for links */
+        justify-content: space-between;
+        align-items: center;
+        position: relative; /* No absolute positioning */
+        top: unset; /* No top offset */
+        right: unset; /* No right offset */
+        background-color: transparent; /* No background */
+        padding: 0; /* Remove extra padding */
+        z-index: 1000; /* Ensure it stays on top */
+    }
+
+    .nav-links ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px; /* Space between items */
+    }
+
+    .nav-links li {
+        display: inline;
+    }
+
+    /* Hero section */
+    .barb {
+        height: 80vh; /* Reduce height */
+    }
+
+    .barb-text {
+        font-size: 30px; /* Smaller font */
+        max-width: 250px; /* Narrower text area */
+    }
+
+    .barb-text h1 {
+        font-size: 70px; /* Smaller title */
+    }
+
+    .reserve-btn {
+        padding: 8px 16px;
+        font-size: 1em; /* Slightly smaller button */
+        right: 90px; /* Adjust position */
+    }
+
+    /* Footer adjustments */
+    footer {
+        flex-direction: row;
+        padding: 10px 0;
+        font-size: 12px; /* Smaller footer text */
+    }
+
+    .socials img {
+        width: 18px; /* Smaller social icons */
+    }
+
+    /* Barber image grids */
+    .flex-row-f, .flex-row-dc {
+        flex-direction: column; /* Stack images */
+        align-items: center;
+        width: auto;
+        margin: 10px 0;
+    }
+
+    .img-2, .pic, .img-3, .empty, .empty-4 {
+        width: 150px; /* Smaller images */
+        height: 120px; /* Adjusted height */
+        margin-bottom: 10px; /* Space between images */
+    }
+
+    /* Adjust barber icons */
+    .barb-icons {
+        width: 60px; /* Smaller icons */
+    }
+
+    /* FAQ container */
+    .faq-container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    /* Booking form */
+    .booking-form-container {
+        width: 700px;
+        padding: 20px;
+    }
+
+    /* Center container for prices */
+    .center-container {
+        margin: 50px 10px; /* Adjust margin */
+        padding: 200px; /* Adequate padding */
+    }
+}
+
+/* General Mobile Viewport */
+@media (max-width: 480px) {
+    /* Header adjustments */
+    .header {
+        padding: 5px 10px;
+        height: 70px; /* Slightly shorter header */
+    }
+    .logo {
+        margin-left: 50px; /* Adjust logo margin */
+    }
+    .logo img {
+        width: 50px; /* Slightly smaller logo */
+    }
+
+    /* Hamburger menu */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        z-index: 9999; /* Ensure it's above other content */
+    }
+
+    .hamburger-menu .line {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 2px 0;
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        border-radius: 25%;
+        transform: scale(1.2);
+    }
+
+    .hamburger-menu.toggle .line:nth-child(1),
+    .hamburger-menu.toggle .line:nth-child(3) {
+        opacity: 0; 
+    }
+
+    .hamburger-menu.toggle .line:nth-child(2) {
+        transform: translateY(0);
+    }
+    /* Nav links */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        z-index: 9998;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        z-index: 9998;
+    }
+
+    /* Animate the sliding effect of nav-links */
+    .nav-links {
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        list-style: none;
+    }
+
+    /* Hero section */
+    .barb {
+        height: 60vh; /* Moderate height */
+    }
+    .barb-text {
+        font-size: 16px; /* Moderate font size */
+        padding: 30px; /* Adequate padding */
+        max-width: 200px; /* Narrow text area */
+    }
+    .barb-text h1 {
+        font-size: 35px; /* Smaller title */
+    }
+    .reserve-btn {
+        padding: 10px 20px; /* Adjust padding */
+        font-size: 1em; /* Consistent button size */
+        right: 20px; /* Adjust position */
+    }
+
+    /* Footer adjustments */
+    footer {
+        flex-direction: row; /* Stack footer items */
+        padding: 20px; /* Adequate padding */
+        text-align: center;
+        font-size: 14px; /* Moderate footer text */
+        position: fixed;
+    }
+    .socials img {
+        width: 20px; /* Moderate icon size */
+    }
+
+    /* Barber image grids */
+    .flex-row-f, .flex-row-dc {
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        width: auto; 
+        margin: 20px 0; 
+    }
+    .img-2, .pic, .img-3, .empty, .empty-4 {
+        width: 200px;
+        height: 150px; 
+        margin-bottom: 15px;
+    }
+
+    /* Barber icons */
+    .barb-icons {
+        width: 80px;
+    }
+
+    /* FAQ container */
+    .faq-container {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    /* Booking form adjustments */
+    .booking-form-container {
+        margin: auto;
+        width: 250px; 
+        padding: 10px; 
+    }
+    /* Adjust center container for prices */
+    .center-container {
+        margin: 50px 20px;
+        padding: 50px 20px;
+    }
+    
+    /* Adjust each haircut item */
+    .haircut-item {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    .haircut-item img {
+        width: 50%;
+        height: auto;
+    }
+    .maps{
+        width: 300px;
+        height: 400px;
+    }
+
+    .table-barbers, th, td {
+        margin-top: 10px;
+        padding: 5px;
+        margin-left: 0.5px;
+        margin-right: 0.5px;
+        background-color: rgba(0, 0, 0, 0.336);
+      }
+      th{
+          color: white;
+          font-size: 15px;
+      }
+      td{
+          color: white;
+          font-size: 10px;
+      }
+      .barb-icons{
+          width: 50px;        /* Adjust the width */
+          height: auto;        /* Maintain the aspect ratio */
+          border-radius: 10px; /* Optional rounded corners */
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 1); /* Optional shadow */
+          margin: 10px;
+      }
+      
+      /* video background */
+      .video-background {
+        position: fixed;
+        top: 25%;
+        left: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
+}
+
